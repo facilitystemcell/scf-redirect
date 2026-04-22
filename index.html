@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Redirigiendo...</title>
-  <script>
-    // Cambia solo esta línea cuando ngrok cambie de URL
-    var BASE_URL = "https://dipsacaceous-multiradial-sariah.ngrok-free.dev";
-    
-    // Lee el equipo del QR y redirige
-    var equipo = new URLSearchParams(window.location.search).get("codigo");
-    if (equipo) {
-      window.location.href = BASE_URL + "/formulario.html?codigo=" + equipo;
-    } else {
-      window.location.href = BASE_URL;
-    }
-  </script>
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=https://dipsacaceous-multiradial-sariah.ngrok-free.dev">
-  </noscript>
-</head>
-<body>
-  <p style="font-family:monospace; color:#00e5ff; background:#0a0e1a; min-height:100vh; display:flex; align-items:center; justify-content:center; margin:0;">
-    Redirigiendo al sistema...
-  </p>
-</body>
-</html>
+var BASE_URL = "https://dipsacaceous-multiradial-sariah.ngrok-free.dev";
+var params = new URLSearchParams(window.location.search);
+var codigo = params.get("codigo");
+var sala   = params.get("sala");
+
+if (sala) {
+  window.location.href = BASE_URL + "/sala.html?sala=" + encodeURIComponent(sala);
+} else if (codigo) {
+  window.location.href = BASE_URL + "/formulario.html?codigo=" + codigo;
+} else {
+  window.location.href = BASE_URL;
+}
