@@ -1,12 +1,25 @@
-var BASE_URL = "https://dipsacaceous-multiradial-sariah.ngrok-free.dev";
-var params = new URLSearchParams(window.location.search);
-var codigo = params.get("codigo");
-var sala   = params.get("sala");
-
-if (sala) {
-  window.location.href = BASE_URL + "/sala.html?sala=" + encodeURIComponent(sala);
-} else if (codigo) {
-  window.location.href = BASE_URL + "/formulario.html?codigo=" + codigo;
-} else {
-  window.location.href = BASE_URL;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirigiendo...</title>
+  <script>
+    var BASE_URL = "https://dipsacaceous-multiradial-sariah.ngrok-free.dev";
+    var params = new URLSearchParams(window.location.search);
+    var codigo = params.get("codigo");
+    var sala   = params.get("sala");
+    if (sala) {
+      window.location.href = BASE_URL + "/sala.html?sala=" + encodeURIComponent(sala);
+    } else if (codigo) {
+      window.location.href = BASE_URL + "/formulario.html?codigo=" + codigo;
+    } else {
+      window.location.href = BASE_URL;
+    }
+  </script>
+</head>
+<body>
+  <p style="font-family:monospace; color:#00e5ff; background:#0a0e1a; min-height:100vh; display:flex; align-items:center; justify-content:center; margin:0;">
+    Redirigiendo al sistema...
+  </p>
+</body>
+</html>
