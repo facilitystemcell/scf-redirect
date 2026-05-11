@@ -8,7 +8,11 @@
     var params  = new URLSearchParams(window.location.search);
     var codigo  = params.get("codigo");
     var sala    = params.get("sala");
-   
+    var entrada = params.get("entrada");
+    var salida  = params.get("salida");
+
+    if (manual) {
+      window.location.href = BASE_URL + "/manual_sc4.html";
     } else if (entrada) {
       window.location.href = BASE_URL + "/entrada_sala.html?sala=" + encodeURIComponent(entrada);
     } else if (salida) {
